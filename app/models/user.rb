@@ -8,5 +8,5 @@ class User < ApplicationRecord
          has_many :event_favorites,dependent: :destroy
  	     has_many :artists,dependent: :destroy
          has_many :artist_comments,dependent: :destroy
-          attachment :image
+         attachment :image
 end

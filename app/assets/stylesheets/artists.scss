@@ -25,7 +25,7 @@
   width: 80%;
   height: 300px;
   margin:0 auto;
- 
+
 }
 
 .artist_index_article{
@@ -64,37 +64,20 @@ float: left;
   width: 80%;
   height: 300px;
   margin:0 auto;
-  background-color: orange;
 }
-
-.artist_show_article{
-  width: 800px;
-  height: 220px;
-  margin :0 auto;
-  background-color: blue;
-}
-
 .artist_show_artist_image{
-  width: 200px;
-  height: 200px;
   float: left;
 }
 
-.artist_show_artist_name{
-  width: 600px;
-  height: 100px;
-  background-color: red;
-float: left;
-
-
+.col-lg-8{
+  padding-top: 10px;
 }
 
-.artist_show_artist_introduction{
-  width: 600px;
-  height: 100px;
-  background-color: yellow;
-  float: left;
-}
-.artist_show_destroy{
-  text-align: right;
+.artist_show_comment_count{
+  width: 80%;
+  height: 50px;
+  text-align: center;
+  font-weight: bold;
+  margin:0 auto;
+
 }
