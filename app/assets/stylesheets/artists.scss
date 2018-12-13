@@ -1,0 +1,100 @@
+// Place all the styles related to the artists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*アーティスト投稿*/
+
+.artist_new_space{
+  width: 100%;
+  height: 20px;
+
+}
+
+.artist_new{
+  width: 60%;
+  border-style: solid;
+  margin:0 auto;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/*アーティスト一覧*/
+.aa{text-align: center;}
+
+.artist_index_big_box{
+  width: 80%;
+  height: 300px;
+  margin:0 auto;
+ 
+}
+
+.artist_index_article{
+  width: 800px;
+  margin :0 auto;
+  margin-top: 10px;
+}
+
+.artist_index_artist_image{
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+
+.artist_index_artist_name{
+  width: 600px;
+  height: 100px;
+
+float: left;
+
+
+}
+
+.artist_index_artist_introduction{
+  width: 600px;
+  height: 100px;
+
+  float: left;
+}
+
+
+/*アーティスト詳細*/
+
+
+.artist_show_big_box{
+  width: 80%;
+  height: 300px;
+  margin:0 auto;
+  background-color: orange;
+}
+
+.artist_show_article{
+  width: 800px;
+  height: 220px;
+  margin :0 auto;
+  background-color: blue;
+}
+
+.artist_show_artist_image{
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+
+.artist_show_artist_name{
+  width: 600px;
+  height: 100px;
+  background-color: red;
+float: left;
+
+
+}
+
+.artist_show_artist_introduction{
+  width: 600px;
+  height: 100px;
+  background-color: yellow;
+  float: left;
+}
+.artist_show_destroy{
+  text-align: right;
+}

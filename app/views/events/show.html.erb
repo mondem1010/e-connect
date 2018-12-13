@@ -1,0 +1,72 @@
+
+
+ <div class="event_show_big_box">
+	<div class="event_show_article" >
+	    <div class="event_show_event_image">
+	    	<%= attachment_image_tag @event, :image, :size => '300x300' %>
+		</div>
+				<div class="container">
+   				   <div class="row">
+   				   		<div class="col-lg-8">
+   				   			<table class="table table-striped">
+							<tr>
+								<td>日時</td>
+								<td><%= @event.date %></td>
+							<tr>
+								<div class="event_show_event_name">
+				   				<td>イベント名</td>
+				   		   		<td><%= @event.event_name %></td>
+							   	</div>
+							</tr>
+							<tr>
+							<div class="event_show_event_introduction"></div>
+			   			 		<td>イベント詳細</td>
+						    	<td><%= @event.introduction %></td>
+							</tr>
+							</table>
+						</div>
+					</div>
+				<div>
+		<div class="event_show_destroy">
+	  		<%= link_to "削除", event_path(@event.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<div class="event_show_commment_count">
+	<%= @event.event_comments.count %>件のコメント</h2>
+</div>
+<div class="event_show_comment">
+    	<% @event.event_comments.each do |event_comment| %>
+    		<%= event_comment.user_id %>
+    		<%= event_comment.comment %><br>
+    <% end %>
+</div>
+
+<div class="event_show_chat">
+　　<%= form_for [@event, @event_comment] do |f| %>
+        <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
+    	<%= f.submit "送信する" %>
+	<% end %>
+</div>
+
+
+<% if @event_comment.event_favorited_by?(current_user) %>
+  <li>
+    	<%= link_to event_event_favorites_path(@event), method: :delete do %>
+      	<i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+      	<%= @event.event_favorites.count %> いいね
+    	<% end %>
+  </li>
+<% else %>
+  <li>
+  	<%= link_to event_event_favorites_path(@event), method: :post do %>
+  	<i class="fa fa-heart-o" aria-hidden="true"></i>
+  	<%= @event_comment.event_favorites.count %> いいね
+  	<% end %>
+  </li>
+<% end %>

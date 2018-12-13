@@ -1,0 +1,21 @@
+<div class="event_new_space">
+</div>
+<div class="event_new">
+    <h1>新規イベント投稿ページ</h1>
+    	<%= form_for(@event) do |f| %>
+            <h4>イベント名</h4>
+            <%= f.text_field :event_name %>
+            <h4>開催地</h4>
+            <%= f.text_field :place %>
+            <h4>出演者</h4>
+            <h4>詳細</h4>
+            <%= f.text_area :introduction %>
+            <h4>日付</h4>
+            <p><%= f.datetime_select :date %></p>
+            <!-- https://qiita.com/Kaisyou/items/c544058dd9c8ae312881 参考URL-->
+            <h4>画像</h4>
+            <%= f.attachment_field :image %>
+            <!-- https://qiita.com/ggtmtmgg/items/ba5f275c122c83013ea1参考 -->
+            <%= f.submit '投稿' %>
+        <% end %>
+</div>

@@ -1,0 +1,105 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event_new_space{
+  width: 100%;
+  height: 20px;
+
+}
+
+.event_new{
+  width: 60%;
+  border-style: solid;
+  margin:0 auto;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+
+/*一覧*/
+.event_index_big_box{
+  width: 80%;
+  height: 300px;
+  margin:0 auto;
+
+}
+
+.event_index_article{
+  width: 800px;
+  height: 220px;
+  margin :0 auto;
+  
+  padding-top: 10px;
+}
+
+.event_index_event_image{
+  width: 200px;
+  height: 220px;
+  float: left;
+  vertical-align: middle;
+ 
+
+}
+.event_index_event_name{
+  width: 600px;
+  height: 100px;
+
+ float: left;
+
+
+}
+
+.event_index_event_introduction{
+  width: 600px;
+  height: 100px;
+
+float: left;
+}
+
+.event_index_event_date{
+  width: 600px;
+  height: 20px;
+
+  font-size: left;
+}
+
+
+/*詳細ーーー*/
+
+
+.event_show_big_box{
+  width: 80%;
+  height: 300px;
+  margin:0 auto;
+
+}
+.event_show_event_image
+{
+  float: left;
+}
+
+.event_show_table{
+  float: left;
+  border:solid;
+
+}
+.event_show_commment_count{
+  width: 80%;
+  height: 50px;
+  text-align: center;
+  font-weight: bold;
+  margin:0 auto;
+
+}
+.event_show_comment{
+  width: 80%;
+  height: 100px;
+  margin:0 auto;
+
+}
+.event_show_chat{
+  width: 80%;
+  height: 50px;
+  margin: 0 auto;
+}

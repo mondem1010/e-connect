@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EConnect</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+      <header>
+        <nav class="mains_index_header clearfix">
+          <a href="/mains"><img src='/assets/logo.png',class="mains_index_header_logo"></a>
+              <div class="mains_index_header_item">
+                <%= link_to " イベント一覧", events_path,:style=>"color: #222222; text-decoration:none; font-size:14px" %>
+              </div>
+              <div class="mains_index_header_item">
+                <%= link_to " アーティスト一覧", artists_path,:style=>"color: #222222; text-decoration:none; font-size:14px" %>
+              </div>
+              <% if user_signed_in? %>
+                <div class="mains_index_header_item">
+                  <%= link_to "ログアウト", destroy_user_session_path, :style=>"color: #222222; text-decoration:none; font-size:14px", method: :delete  %>
+                </div>
+                <div class="mains_index_header_item">
+                  <%= link_to current_user.name, user_path(current_user.id) %>
+                </div>
+              <% else %>
+                <div class="mains_index_header_item">
+                  <%= link_to "新規登録", new_user_registration_path,:style=>"color: #222222; text-decoration:none; font-size:14px" %>
+                </div>
+                <div class="mains_index_header_item">
+                  <%= link_to " ログイン", new_user_session_path,:style=>"color: #222222; text-decoration:none; font-size:14px" %>
+                </div>
+              <% end %>
+              <dl class="searchbox">
+                <%= search_form_for @search, url: mains_path do |f| %>
+                <dt><%= f.text_field :artist_name_cont ,placeholder: '検索するテキストを入力...' %></dt>
+                <dd><%= f.submit ("検索") , class: 'search-btn'%></dd>
+                <% end %>
+              </dl>
+          </nav>
+    </header>
+  <body>
+    <%= yield %>
+  </body>
+</html>

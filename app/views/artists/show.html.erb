@@ -1,0 +1,31 @@
+<div class="artist_show_big_box">
+	<div class="artist_show_article" >
+	    <div class="artist_show_artist_image">
+	    	<%= attachment_image_tag @artist, :image, :size => '200x200' %>
+		</div>
+		<div class="artist_show_artist_name">
+	   		<p>名前</p>
+	   		<span><%= @artist.artist_name %></span>
+	   	</div>
+	   	<div class="artist_show_artist_introduction">
+    		<p>詳細</p>
+	    		<span><%= @artist.introduction %></span>
+		</div>
+		<div class="artist_show_destroy">
+	    <%= link_to "削除", artist_path(@artist.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+		</div>
+	</div>
+</div>
+
+
+ <%= @artist.artist_comments.count %>件のコメント</h2>
+
+    <% @artist.artist_comments.each do |artist_comment| %>
+    	<%= artist_comment.user_id %>
+    	<%= artist_comment.content %>
+    <% end %>
+　　<%= form_for [@artist, @artist_comment] do |f| %>
+           <%= f.text_area :content ,placeholder: "コメントをここに" %>
+    <%= f.submit "送信する" %>
+<% end %>
+

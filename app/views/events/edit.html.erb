@@ -1,0 +1,37 @@
+
+
+ <div class="event_show_big_box">
+	<div class="event_show_article" >
+		<%= form_for(@event) do |f| %>
+	    <div class="event_show_event_image">
+	    	<%= attachment_image_tag @event, :image, :size => '300x300' %>
+		</div>
+				<div class="container">
+   				   <div class="row">
+   				   		<div class="col-lg-8">
+   				   			<table class="table table-striped">
+							<tr>
+								<td>日時</td>
+								<td><%= f.date_select :date %></td>
+							<tr>
+								<div class="event_show_event_name">
+				   				<td>イベント名</td>
+				   		   		<td><%= f.text_field :event_name %></td>
+							   	</div>
+							</tr>
+							<tr>
+							<div class="event_show_event_introduction"></div>
+			   			 		<td>イベント詳細</td>
+						    	<td><%= f.text_area :introduction %></td>
+							</tr>
+							</table>
+						</div>
+					</div>
+				<div>
+		<div class="event_show_destroy">
+	  <%= link_to "削除", event_path(@event.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+		</div>
+		<%= f.submit '保存' %> 
+		<% end %>
+	</div>
+</div>
