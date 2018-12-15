@@ -12,26 +12,26 @@
 
       <header>
         <nav class="mains_index_header clearfix">
-          <a href="/mains"><img src='/assets/logo.png',class="mains_index_header_logo"></a>
+          <a href="/mains"><img src='/assets/logo.png'alt=" " class="header_logo"></a>
               <div class="mains_index_header_item">
-                <%= link_to " イベント一覧", events_path,:style=>"color: #222222; text-decoration:none; font-size:14px" %>
+                <%= link_to " イベント一覧", events_path,:style=>"color: white; text-decoration:none; font-size:14px" %>
               </div>
               <div class="mains_index_header_item">
-                <%= link_to " アーティスト一覧", artists_path,:style=>"color: #222222; text-decoration:none; font-size:14px" %>
+                <%= link_to " アーティスト一覧", artists_path,:style=>"color: white; text-decoration:none; font-size:14px" %>
               </div>
               <% if user_signed_in? %>
                 <div class="mains_index_header_item">
-                  <%= link_to "ログアウト", destroy_user_session_path, :style=>"color: #222222; text-decoration:none; font-size:14px", method: :delete  %>
+                  <%= link_to "ログアウト", destroy_user_session_path, :style=>"color: white; text-decoration:none; font-size:14px", method: :delete  %>
                 </div>
                 <div class="mains_index_header_item">
-                  <%= link_to current_user.name, user_path(current_user.id) %>
+                  <%= link_to current_user.name, user_path(current_user.id),:style=>"color: white;" %>
                 </div>
               <% else %>
                 <div class="mains_index_header_item">
-                  <%= link_to "新規登録", new_user_registration_path,:style=>"color: #222222; text-decoration:none; font-size:14px" %>
+                  <%= link_to "新規登録", new_user_registration_path,:style=>"color: #white; text-decoration:none; font-size:14px" %>
                 </div>
                 <div class="mains_index_header_item">
-                  <%= link_to " ログイン", new_user_session_path,:style=>"color: #222222; text-decoration:none; font-size:14px" %>
+                  <%= link_to " ログイン", new_user_session_path,:style=>"color: #white; text-decoration:none; font-size:14px" %>
                 </div>
               <% end %>
               <dl class="searchbox">

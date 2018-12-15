@@ -12,7 +12,7 @@
 	width: 100%;
 	height: 400px;
 	margin: 0 auto;
-	opacity: 0.5;
+	opacity: 0.8;
 }
 
 
@@ -21,9 +21,26 @@
 	margin:0 auto;
 }
 
-.main_event_recent{
+.main_index_recent{
 	width: 200px;
 	height: 200px;
 	background-color: blue;
 	display: inline-block;
+	margin-right: 50px;
+}
+
+h1{
+	text-align: center;
+	font-weight: bold;
+	font-size: 24px;
+}
+.event_name{
+	text-align: center;
+	font-weight: bold;
+	font-size: 24px;
+}
+.artist_name{
+	text-align: center;
+	font-weight: bold;
+	font-size: 24px;
 }

@@ -6,12 +6,12 @@ Rails.application.routes.draw do
  
   resources :artists do
   resources :artist_comments,  only: [:create, :destroy]
+  resources :artist_favorites,  only: [:create, :destroy]
   end
   resources :events do
   resources :event_comments, only: [:create, :destroy]
   resources :event_favorites,  only: [:create, :destroy]
   end
-  resources :artist_favorites,  only: [:create, :destroy]
   resources :messages, only: [:create ,:destroy]
   resources :rooms, only: [:show, :create]
   resources :mains, only: [:index]
