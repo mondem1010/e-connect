@@ -8,20 +8,24 @@
    				   <div class="row">
    				   		<div class="col-lg-8">
    				   			<table class="table table-striped">
-							<tr>
-								<td>日時</td>
-								<td><%= @event.date %></td>
-							<tr>
-								<div class="event_show_event_name">
-				   				<td>イベント名</td>
-				   		   		<td><%= @event.event_name %></td>
-							   	</div>
-							</tr>
-							<tr>
-							<div class="event_show_event_introduction"></div>
-			   			 		<td>イベント詳細</td>
-						    	<td><%= @event.introduction %></td>
-							</tr>
+								<tr>
+									<td>日時</td>
+									<td><%= @event.date %></td>
+								<tr>
+									<div class="event_show_event_name">
+					   				<td>イベント名</td>
+					   		   		<td><%= @event.event_name %></td>
+								   	</div>
+								</tr>
+								<tr>
+								<div class="event_show_event_introduction"></div>
+				   			 		<td>イベント詳細</td>
+							    	<td><%= @event.introduction %></td>
+								</tr>
+								<tr>
+									<td>出演</td>
+									<td><%= @event.performer %></td>
+								</tr>
 							</table>
 						</div>
 					</div>
@@ -43,7 +47,7 @@
 		<table class="table table-striped">
 			<tr>
 				<td><%= attachment_image_tag event_comment.user, :image, :size => '50x50' %><td>
-				<td><%= event_comment.user.name %><td>
+				<td><%= link_to event_comment.user.name,user_path(event_comment.user.id) %><td>
    				<td><%= event_comment.comment %><td>
    				<td><%= event_comment.star %>点<td>
    				<td><%= render partial: "event_favorite" %></td>

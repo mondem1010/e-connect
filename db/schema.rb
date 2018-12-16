@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_15_183619) do
+ActiveRecord::Schema.define(version: 2018_12_16_073909) do
 
   create_table "artist_comments", force: :cascade do |t|
     t.integer "artist_id"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_183619) do
     t.datetime "updated_at", null: false
     t.json "images"
     t.string "image_id"
+    t.text "url"
   end
 
   create_table "entries", force: :cascade do |t|
@@ -96,6 +97,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_183619) do
     t.json "images"
     t.string "image_id"
     t.string "place"
+    t.string "performer"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -130,6 +132,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_183619) do
     t.string "gender"
     t.string "introduction"
     t.string "image_id"
+    t.string "hobby"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

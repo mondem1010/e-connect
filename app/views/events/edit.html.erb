@@ -5,6 +5,7 @@
 		<%= form_for(@event) do |f| %>
 	    <div class="event_show_event_image">
 	    	<%= attachment_image_tag @event, :image, :size => '300x300' %>
+	    		<%= f.attachment_field :image %>
 		</div>
 				<div class="container">
    				   <div class="row">
@@ -23,6 +24,10 @@
 							<div class="event_show_event_introduction"></div>
 			   			 		<td>イベント詳細</td>
 						    	<td><%= f.text_area :introduction %></td>
+							</tr>
+							<tr>
+								<td>出演</td>
+								<td><%= f.text_field :performer %></td>
 							</tr>
 							</table>
 						</div>

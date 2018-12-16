@@ -18,15 +18,23 @@
 
 .main_event_big_recent{
 	width: 80%;
+	height: 400px;
 	margin:0 auto;
+
 }
 
 .main_index_recent{
 	width: 200px;
-	height: 200px;
-	background-color: blue;
+	height: 400px;
 	display: inline-block;
-	margin-right: 50px;
+	margin-right: 42px;
+	margin-left: 42px;
+	float: left;
+}
+.event_name{
+	width: 200px;
+	height: 200px;
+	word-break: break-all;
 }
 
 h1{

@@ -14,6 +14,6 @@ class ArtistCommentsController < ApplicationController
   def artist_comment_params
     params.require(:artist_comment).permit(:user_id,
                       :artist_id,
-                      :content)
+                      :content,:star)
   end
 end

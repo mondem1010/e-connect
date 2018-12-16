@@ -34,12 +34,7 @@
                   <%= link_to " ログイン", new_user_session_path,:style=>"color: #white; text-decoration:none; font-size:14px" %>
                 </div>
               <% end %>
-              <dl class="searchbox">
-                <%= search_form_for @search, url: mains_path do |f| %>
-                <dt><%= f.text_field :artist_name_cont ,placeholder: '検索するテキストを入力...' %></dt>
-                <dd><%= f.submit ("検索") , class: 'search-btn'%></dd>
-                <% end %>
-              </dl>
+              
           </nav>
     </header>
   <body>

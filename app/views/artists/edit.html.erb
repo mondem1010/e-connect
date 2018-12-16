@@ -1,9 +1,37 @@
-<h1>編集画面</h1>
-	<%= form_for(@artist) do |f| %>
-	    <h4>タイトル</h4>
-	    <%= f.text_field :artist_name %>
-	    <h4>本文</h4>
-	    <%= f.text_area :introduction %>
-	    <%= f.submit '保存' %>
-	<% end %>
 
+<div class="artist_edit_big_box">
+	<div class="artist_edit_article" >
+		<%= form_for(@artist) do |f| %>
+	    	<div class="artist_edit_artist_image">
+	    		<%= attachment_image_tag @artist, :image, :size => '300x300' %>
+	    		<%= f.attachment_field :image %>
+			</div>
+		<div class="container">
+   	    	<div class="row">
+   		   		<div class="col-lg-8">
+		   			<table class="table table-striped">
+						<tr>
+							<td>アーティスト名</td>
+							<td><%= f.text_field :artist_name %></td>
+						<tr>
+							<div class="artist_edit_artist_introduction">
+			   				<td>詳細</td>
+			   		   		<td><%= f.text_area :introduction %></td>
+						   	</div>
+						</tr>
+						<tr>
+						<div class="artist_edit_artist"></div>
+		   			 		<td>公式サイト</td>
+					    	<td><a><%= f.text_area :url %></td></a>
+						</tr>
+					</table>
+				</div>
+			</div>
+		<div>
+		<div class="event_show_destroy">
+		  <%= link_to "削除", artist_path(@artist.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+		</div>
+		<%= f.submit '保存' %> 
+		<% end %>
+	</div>
+</div>

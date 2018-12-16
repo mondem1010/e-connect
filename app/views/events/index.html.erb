@@ -6,7 +6,7 @@
 	 				<%= attachment_image_tag event, :image, :size => '200x220'%>
 			    </div>
 			    <div class="row">
-	   				<div class="col-lg-9">
+	   				<div class="col-lg-8">
 			    		<table class="table table-striped">
 			    			<tr>
 			    				<td><p>イベントタイトル</p></td>
@@ -23,7 +23,7 @@
 							<!--     https://qiita.com/ggtmtmgg/items/ba5f275c122c83013ea1 -->
 							<tr>
 								<td>新着コメント</td>
-									<% event.event_comments.order(id: "DESC").limit(2).each do |event_comment| %>
+									<% event.event_comments.order(id: "DESC").limit(1).each do |event_comment| %>
 									<td><%= event_comment.comment %></td>
 									<% end %>
 							</tr>
