@@ -1,34 +1,35 @@
-<div class="event_index_big_box">
- 	<% @events.each do |event| %>
- 		<div class="event_index_article">
- 			<div class="event_index_event_image">
- 				<%= attachment_image_tag event, :image, :size => '200x220'%>
-		    </div>
-		    <div class="row">
-   				<div class="col-lg-9">
-		    		<table class="table table-striped">
-		    			<tr>
-		    				<td><p>イベントタイトル</p></td>
-		    				<td><span><%=link_to event.event_name, event_path(event.id) %></span></td>
-		    			</tr>
-		    			<tr>
-	    					<td><p>詳細</p></td>
-	 	   					<td><span><%= event.introduction %></span></td>
-	 	  				</tr>
-	 	  				<tr>
-	 	   					<td><p>開催日時</p></td>
-		   			 		<td><span><%= event.date %></span></td>
-		   				</tr>
-						<!--     https://qiita.com/ggtmtmgg/items/ba5f275c122c83013ea1 -->
-						<tr>
-							<td>新着コメント</td>
-								<% event.event_comments.order(id: "DESC").limit(2).each do |event_comment| %>
-								<td><%= event_comment.comment %></td>
-								<% end %>
-						</tr>
-   					</table>
-   				</div>
-   			</div>
-	   	</div>
-	<% end %>
-</div>
+<h1 class="aa">イベント一覧</h1>
+	<div class="event_index_big_box">
+	 	<% @events.each do |event| %>
+	 		<div class="event_index_article">
+	 			<div class="event_index_event_image">
+	 				<%= attachment_image_tag event, :image, :size => '200x220'%>
+			    </div>
+			    <div class="row">
+	   				<div class="col-lg-9">
+			    		<table class="table table-striped">
+			    			<tr>
+			    				<td><p>イベントタイトル</p></td>
+			    				<td><span><%=link_to event.event_name, event_path(event.id) %></span></td>
+			    			</tr>
+			    			<tr>
+		    					<td><p>詳細</p></td>
+		 	   					<td><span><%= event.introduction %></span></td>
+		 	  				</tr>
+		 	  				<tr>
+		 	   					<td><p>開催日時</p></td>
+			   			 		<td><span><%= event.date %></span></td>
+			   				</tr>
+							<!--     https://qiita.com/ggtmtmgg/items/ba5f275c122c83013ea1 -->
+							<tr>
+								<td>新着コメント</td>
+									<% event.event_comments.order(id: "DESC").limit(2).each do |event_comment| %>
+									<td><%= event_comment.comment %></td>
+									<% end %>
+							</tr>
+	   					</table>
+	   				</div>
+	   			</div>
+		   	</div>
+		<% end %>
+	</div>

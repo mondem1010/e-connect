@@ -25,10 +25,19 @@
 <div class="artist_show_comment_count">
  <%= @artist.artist_comments.count %>件のコメント</h2>
 </div>
-    <% @artist.artist_comments.each do |artist_comment| %>
-    	<%= artist_comment.user_id %>
-    	<%= artist_comment.content %><br>
-    <% end %>
+	<div class="artist_show_comment">
+   		 <% @artist.artist_comments.each do |artist_comment| %>
+    		<table class="table table-striped">
+				<tr>
+					<td><%= attachment_image_tag artist_comment.user, :image, :size => '50x50' %><td>
+					<td><%= artist_comment.user.name %><td>
+   					<td><%= artist_comment.content %><td>
+   					<td><%= artist_comment.star %>点<td>
+   					<td><%= render partial: "artist_favorite" %></td>
+   				</tr>
+   			</table>
+		<% end %>
+	</div>
 　　<%= form_for [@artist, @artist_comment] do |f| %>
        <%= f.text_area :content, rows:'3', class: "form-control",placeholder: "コメントをここに" %>
     <%= f.submit "送信する" %>

@@ -1,0 +1,20 @@
+<% if user_signed_in? %>
+  <% if @artist_comment.artist_favorite_user(current_user.id) %>
+    <%= button_to artist_artist_favorite_path(artist_favorite, artist_comment_id: artist_comment.id), method: :delete, id: "like-button", remote: true do %>
+      <%= image_tag("heart.png") %>
+      <span>
+        <%= artist_comment.artist_favorite_count %>
+      </span>
+    <% end %>
+  <% else %>
+    <%= button_to artist_artist_favorites_path(@artist), id: "like-button", remote: true do %>
+      <%= image_tag("black_heart.png",:size =>'10x10') %><%= @artist_comment.artist_favorites_count %>
+
+    <% end %>
+  <% end %>
+<% else %>
+  <%= image_tag("black_heart") %>
+    <span>
+              <%= @artist_comment.event_favorite_count %>
+    </span>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_073320) do
+ActiveRecord::Schema.define(version: 2018_12_15_183619) do
 
   create_table "artist_comments", force: :cascade do |t|
     t.integer "artist_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_12_14_073320) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "artist_favorites_count"
   end
 
   create_table "artist_favorites", force: :cascade do |t|
@@ -43,6 +44,15 @@ ActiveRecord::Schema.define(version: 2018_12_14_073320) do
     t.datetime "updated_at", null: false
     t.json "images"
     t.string "image_id"
+  end
+
+  create_table "entries", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_entries_on_room_id"
+    t.index ["user_id"], name: "index_entries_on_user_id"
   end
 
   create_table "event_artists", force: :cascade do |t|
@@ -89,17 +99,20 @@ ActiveRecord::Schema.define(version: 2018_12_14_073320) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.string "user_id"
-    t.string "room_id"
-    t.string "content"
+    t.integer "user_id"
+    t.integer "room_id"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_messages_on_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "rooms", force: :cascade do |t|
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|

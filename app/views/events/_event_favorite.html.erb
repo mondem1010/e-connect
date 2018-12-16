@@ -9,7 +9,7 @@
   <% else %>
     <%= button_to event_event_favorites_path(@event), id: "like-button", remote: true do %>
       <%= image_tag("black_heart.png",:size =>'10x10') %><%= @event_comment.event_favorites_count %>
-      
+
     <% end %>
   <% end %>
 <% else %>
