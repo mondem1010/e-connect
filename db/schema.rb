@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_16_073909) do
+ActiveRecord::Schema.define(version: 2018_12_18_195117) do
 
   create_table "artist_comments", force: :cascade do |t|
     t.integer "artist_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2018_12_16_073909) do
     t.json "images"
     t.string "image_id"
     t.text "url"
+    t.integer "average_star"
   end
 
   create_table "entries", force: :cascade do |t|
@@ -98,6 +99,7 @@ ActiveRecord::Schema.define(version: 2018_12_16_073909) do
     t.string "image_id"
     t.string "place"
     t.string "performer"
+    t.integer "avg_star"
   end
 
   create_table "messages", force: :cascade do |t|

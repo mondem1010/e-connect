@@ -1,67 +1,65 @@
-
-
- <div class="event_show_big_box">
-	    <div class="event_show_event_image">
-	    	<%= attachment_image_tag @event, :image, :size => '300x300' %>
-		</div>
-				<div class="container">
-   				   <div class="row">
-   				   		<div class="col-lg-8">
-   				   			<table class="table table-striped">
-								<tr>
-									<td>日時</td>
-									<td><%= @event.date %></td>
-								<tr>
-									<div class="event_show_event_name">
-					   				<td>イベント名</td>
-					   		   		<td><%= @event.event_name %></td>
-								   	</div>
-								</tr>
-								<tr>
-								<div class="event_show_event_introduction"></div>
-				   			 		<td>イベント詳細</td>
-							    	<td><%= @event.introduction %></td>
-								</tr>
-								<tr>
-									<td>出演</td>
-									<td><%= @event.performer %></td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				<div>
+<div class="event_show_big_box">
+	<div class="event_show_event_image">
+    	<%= attachment_image_tag @event, :image, :size => '300x300' %>
+	</div>
+		<div class="container">
+   		   <div class="event_show_row">
+   		  		<div class="col-lg-8">
+   		  			<table class="table table-striped">
+						<tr>
+							<td class="col-xs-2">日時</td>
+							<td><%= @event.date %></td>
+						<tr>
+				   				<div class="event_show_event_name">
+			   					<td>イベント名</td>
+			   		   		<td><%= @event.event_name %></td>
+						   	</div>
+						</tr>
+						<tr>
+							<div class="event_show_event_introduction"></div>
+				   		 		<td>イベント詳細</td>
+						    	<td><%= @event.introduction %></td>
+						</tr>
+						<tr>
+							<td>出演</td>
+							<td><%= @event.performer %></td>
+						</tr>
+					</table>
+				</div>
+			</div>
 		<div class="event_show_destroy">
+			<%= link_to "編集", edit_event_path(@event.id) %>
 	  		<%= link_to "削除", event_path(@event.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+		</div>	
+	</div>
+
+		<div class="event_show_commment_count">
+			<%= @event.event_comments.count %>件のコメント</h2>
 		</div>
-</div>
-
-
-
-
-
-<div class="event_show_commment_count">
-	<%= @event.event_comments.count %>件のコメント</h2>
-</div>
-<div class="event_show_comment">
-	<% @event.event_comments.each do |event_comment| %>
-		<table class="table table-striped">
-			<tr>
-				<td><%= attachment_image_tag event_comment.user, :image, :size => '50x50' %><td>
-				<td><%= link_to event_comment.user.name,user_path(event_comment.user.id) %><td>
-   				<td><%= event_comment.comment %><td>
-   				<td><%= event_comment.star %>点<td>
-   				<td><%= render partial: "event_favorite" %></td>
-   			</tr>
-   		</table>
-	<% end %>
-</div>
-
-<div class="event_show_chat">
-　　<%= form_for [@event, @event_comment] do |f| %>
-        <%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントをここに" %>
-        <%= f.number_field :star ,placeholder: "評価（５点満点）" %>
-    	<%= f.submit "送信する" %>
-	<% end %>
+			<div class="event_show_comment">
+				<table class="table table-striped">
+					<% @event.event_comments.each do |event_comment| %>
+						<tr>
+							<td class="col-xs-1"><%= attachment_image_tag event_comment.user, :image, :size => '50x50' %><td>
+							<td class="col-xs-1"><%= link_to event_comment.user.name,user_path(event_comment.user.id) %><td>
+	   						<td class="col-xs-6"><%= event_comment.comment %><td>
+	   						<td class="col-xs-1"><%= event_comment.star %>点<td>
+	   						<td class="col-xs-1">
+					   		<div id="like-buttons-<%= event_comment.id %>">
+	   							<%= render "event_favorite",event_comment: event_comment %>
+					  		</div>
+	   						</td>
+	   					</tr>
+					<% end %>
+				</table>
+			</div>
+				<div class="event_show_chat">
+　					<%= form_for [@event, @event_comment] do |f| %>
+        				<%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントをここに" %>
+        				<%= f.number_field :star ,placeholder: "評価（100点満点）" %>
+    					<%= f.submit "送信する" %>
+					<% end %>
+				</div>
 </div>
 
 <!-- https://qiita.com/YuitoSato/items/94913d6a349a530b2ea2 -->

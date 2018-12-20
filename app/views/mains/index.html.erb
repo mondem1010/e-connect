@@ -10,7 +10,7 @@
 		</script>
 </div>
 
-<h1>最近追加されたイベント</h1>
+<h1 class="main_name">New event</h1>
 	<div class="main_event_big_recent">
 		<% @events.each do |event| %>
 			<div class="main_index_recent">
@@ -25,22 +25,38 @@
 
 
 
-<h1>最近の追加されたアーティスト</h1>
-<div class="main_event_big_recent">
+<h1 class="main_name">New artist</h1>
+<div class="main_event_big_recent_artist">
 	<% @artists.each do |artist| %>
-		<div class="main_index_recent">
+		<div class="main_index_recent_artist">
 			<div><%= attachment_image_tag artist, :image, :size => "200x200" %></div>
 			<div class="artist_name"><%=link_to artist.artist_name, artist_path(artist.id) %></div>
 		</div>
 		<% end %>
 </div>
 
-<h1>評価の高かったイベント</h1>
+<h1 class="main_name">Good reputation event</h1>
+	
 	<div class="main_event_big_recent">
+		<% @eventss.each do |event| %>
+			<div class="main_index_recent">
+				<div><%= attachment_image_tag event, :image, :size => "200x200" %></div>
+				<div class="event_name"><%=link_to event.event_name, event_path(event.id) %></div>
+				<div class="event_avg"><%= event.avg_star %>/100点</div>
+			</div>
+		<% end %>
 
+	</div>
 
+<h1 class="main_name">Good reputation artist</h1>
+	
+	<div class="main_event_big_recent_artist">
+		<% @artistss.each do |artist| %>
+			<div class="main_index_recent_artist">
+				<div><%= attachment_image_tag artist, :image, :size => "200x200" %></div>
+				<div class="artist_name"><%=link_to artist.artist_name, artist_path(artist.id) %></div>
+				<div class="event_avg"><%= artist.average_star %>/100点</div>
+			</div>
+		<% end %>
 
-		https://qiita.com/nojinoji/items/2b3f8309a31cc6d88d03
-
-
-		https://qiita.com/YuitoSato/items/94913d6a349a530b2ea2
+	</div>

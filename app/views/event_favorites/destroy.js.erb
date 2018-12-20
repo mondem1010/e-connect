@@ -1,1 +1,2 @@
-$("#like-buttons").html("<%= j(render partial: 'event_favorite', locals: { event_comments: @event_comments, event_favorites: @event_favorites }) %>");
+// $("#like-buttons").html("<%= j(render partial: 'events/event_favorite', locals: { event_comments: @event_comments, event_favorites: @event_favorites,event_comment: @event_comment }) %>");
+$("#like-buttons-<%= @event_comment.id %> ").html("<%= j(render partial: 'events/event_favorite', locals: { event_comments: @event_comments, event_favorites: @event_favorites, event_favorite: @event_favorite, event_comment: @event_comment}) %>")

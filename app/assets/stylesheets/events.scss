@@ -20,7 +20,6 @@
 /*一覧*/
 .event_index_big_box{
   width: 80%;
-  height: 300px;
   margin:0 auto;
 
 }
@@ -72,13 +71,13 @@ float: left;
 
 .event_show_big_box{
   width: 80%;
-  height: 300px;
   margin:0 auto;
 
 }
 .event_show_event_image
 {
   float: left;
+  padding-top: 30px;
 }
 
 .event_show_table{
@@ -86,8 +85,15 @@ float: left;
   border:solid;
 
 }
+
+.col-xs-6{
+  word-break: break-all;
+}
+.event_show_row{
+  padding-top: 30px;
+}
 .event_show_commment_count{
-  width: 80%;
+  width:100%;
   height: 50px;
   text-align: center;
   font-weight: bold;
@@ -95,12 +101,12 @@ float: left;
 
 }
 .event_show_comment{
-  width: 80%;
+  width: 100%;
   margin:0 auto;
 
 }
 .event_show_chat{
-  width: 80%;
+  width: 100%;
   height: 50px;
   margin: 0 auto;
 }

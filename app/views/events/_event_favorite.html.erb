@@ -1,19 +1,19 @@
 <% if user_signed_in? %>
-  <% if @event_comment.event_favorite_user(current_user.id) %>
-    <%= button_to event_event_favorite_path(event_favorite, event_comment_id: event_comment.id), method: :delete, id: "like-button", remote: true do %>
-      <%= image_tag("heart.png") %>
+  <% if event_comment.event_favorite_user?(current_user) %>
+    <%= button_to event_comment_event_favorites_path(event_comment.id), method: :delete, remote: true do %>
+      <%= image_tag("heart.png",:size =>'10x10') %>
       <span>
-        <%= event_comment.event_favorite_count %>個
+        <%= event_comment.event_favorites.count %>個
       </span>
   <% end %>
   <% else %>
-    <%= button_to event_event_favorites_path(@event), id: "like-button", remote: true do %>
-      <%= image_tag("black_heart.png",:size =>'10x10') %><%= @event_comment.event_favorites_count %>
+    <%= button_to event_comment_event_favorites_path(event_comment.id),method: :post, remote: true do %>
+      <%= image_tag("black_heart.png",:size =>'10x10') %><%= event_comment.event_favorites.count %>
     <% end %>
   <% end %>
     <% else %>
-      <%= image_tag("black_heart.png") %>
+      <%= image_tag("black_heart.png",:size =>'10x10') %>
          <span>
-      <%= @event_comment.event_favorite_count %>個
+      <%= event_comment.event_favorites.count %>個
     </span> <!-- ログインしてないといいねできない -->
 <% end %>

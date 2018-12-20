@@ -1,51 +1,58 @@
+<% @artist_comment.errors.full_messages.each do |message| %>
+  <%= message %>
+<% end %>
 <div class="artist_show_big_box">
-	    <div class="artist_show_artist_image">
-	    	<%= attachment_image_tag @artist, :image, :size => '300x300' %>
-		</div>
-			<div class="container">
-   				<div class="row">
-   				   	<div class="col-lg-8">
-   				   			<table class="table table-striped">
-   				   				<tr>
-	   								<td>名前</td>
-	   								<td><%= @artist.artist_name %></td>
-	   							</tr>
-	   							<tr>
-						    		<td>詳細</td>
-	  						  		<td><%= @artist.introduction %></td>
-								</tr>
-								<tr>
-									<td>サイト</td>
-									<td><%= link_to "公式ホームページへ",@artist.url %></td>
-								</tr>
-							</table>
-					</div>
+	<div class="artist_show_artist_image">
+	    <%= attachment_image_tag @artist, :image, :size => '300x300' %>
+	</div>
+		<div class="container">
+   			<div class="artist_show_row">
+   			  	<div class="col-lg-8">
+   		  			<table class="table table-striped">
+   		  				<tr>
+	   						<td class="col-xs-2">名前</td>
+ 							<td><%= @artist.artist_name %></td>
+	  					</tr>
+	   					<tr>
+				    		<td>詳細</td>
+	  				  		<td><%= @artist.introduction %></td>
+						</tr>
+						<tr>
+							<td>サイト</td>
+							<td><%= link_to "公式ホームページへ",@artist.url %></td>
+						</tr>
+					</table>
 				</div>
 				<div class="artist_show_destroy">
+					<%= link_to "編集", edit_artist_path(@artist.id) %>
 	    			<%= link_to "削除", artist_path(@artist.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 				</div>
-</div>
-
-<div class="artist_show_comment_count">
- <%= @artist.artist_comments.count %>件のコメント</h2>
-</div>
-	<div class="artist_show_comment">
-   		 <% @artist.artist_comments.each do |artist_comment| %>
-    		<table class="table table-striped">
-				<tr>
-					<td><%= attachment_image_tag artist_comment.user, :image, :size => '50x50' %><td>
-					<td><%= artist_comment.user.name %><td>
-   					<td><%= artist_comment.content %><td>
-   					<td><%= artist_comment.star %>点<td>
-   					<td><%= render partial: "artist_favorite" %></td>
-   				</tr>
-   			</table>
+			</div>
+		</div>
+		<div class="artist_show_comment_count">
+ 			<%= @artist.artist_comments.count %>件のコメント</h2>
+		</div>
+		<div class="artist_show_comment">
+   			<% @artist.artist_comments.each do |artist_comment| %>
+    			<table class="table table-striped">
+					<tr>
+						<td class="col-xs-1"><%= attachment_image_tag artist_comment.user, :image, :size => '50x50' %><td>
+						<td class="col-xs-1"><%= link_to artist_comment.user.name,user_path(artist_comment.user.id) %><td>
+   						<td class="col-xs-6"><%= artist_comment.content %><td>
+   						<td class="col-xs-1"><%= artist_comment.star %>点<td>
+ 						<td class="col-xs-1">
+ 							<div id="like-buttons-<%= artist_comment.id %>">
+  							<%= render "artist_favorite",artist_comment: artist_comment %>
+   							</div>
+   						</td>
+   					</tr>
+   				</table>
+			<% end %>
+		</div>
+　　		<%= form_for [@artist, @artist_comment] do |f| %>
+      		<%= f.text_area :content, rows:'3', class: "form-control",placeholder: "コメントをここに" %>
+       		<%= f.number_field :star ,placeholder: "評価（100点満点）" %>
+    		<%= f.submit "送信する" %>
 		<% end %>
-	</div>
-　　<%= form_for [@artist, @artist_comment] do |f| %>
-       <%= f.text_area :content, rows:'3', class: "form-control",placeholder: "コメントをここに" %>
-       <%= f.number_field :star ,placeholder: "評価（５点満点）" %>
-    	<%= f.submit "送信する" %>
-<% end %>
-
+</div>
 

@@ -1,10 +1,11 @@
 class ArtistsController < ApplicationController
+  PER = 2
   def new
     @artist = Artist.new
   end
 
   def index
-    @artists = Artist.all
+    @artists = Artist.all.page(params[:page]).per(PER)
   end
 
   def show
@@ -17,10 +18,13 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    artist = Artist.new(artist_params)
-    artist.user_id = current_user.id
-    artist.save
-    redirect_to mains_path
+    @artist = Artist.new(artist_params)
+    @artist.user_id = current_user.id
+    if @artist.save
+      redirect_to mains_path
+    else
+      render "artists/new"
+    end
   end
 
   def destroy
@@ -39,6 +43,6 @@ class ArtistsController < ApplicationController
 
   private
   def artist_params
-        params.require(:artist).permit(:artist_name, :introduction,:image,:url)
+        params.require(:artist).permit(:artist_name, :introduction,:image,:url,:page)
   end
 end

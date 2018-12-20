@@ -67,3 +67,7 @@ gem "refile-mini_magick"
 gem 'ransack'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'kaminari'
+gem 'pry-rails'
+gem 'pry-byebug'
+gem 'pry-doc'

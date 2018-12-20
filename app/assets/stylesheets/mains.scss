@@ -23,9 +23,25 @@
 
 }
 
+
+.main_event_big_recent_artist{
+	width: 80%;
+	height: 300px;
+	margin:0 auto;
+
+}
 .main_index_recent{
 	width: 200px;
 	height: 400px;
+	display: inline-block;
+	margin-right: 42px;
+	margin-left: 42px;
+	float: left;
+}
+
+.main_index_recent_artist{
+	width: 200px;
+	height: 300px;
 	display: inline-block;
 	margin-right: 42px;
 	margin-left: 42px;
@@ -37,10 +53,11 @@
 	word-break: break-all;
 }
 
-h1{
+.main_name{
 	text-align: center;
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 36px;
+	font-family: 'Cherry Swash', cursive;
 }
 .event_name{
 	text-align: center;
@@ -51,4 +68,13 @@ h1{
 	text-align: center;
 	font-weight: bold;
 	font-size: 24px;
+}
+
+.event_avg{
+	font-weight: bold;
+	color: red;
+	font-size: 24px;
+	font-family: 'Amatic SC', cursive;
+	text-align: center;
+
 }

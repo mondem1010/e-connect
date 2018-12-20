@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :artists do
-  resources :artist_comments,  only: [:create, :destroy]
-  resources :artist_favorites,  only: [:create, :destroy]
+    resources :artist_comments,  only: [:create, :destroy]
+    resources :artist_favorites,  only: [:create, :destroy]
   end
   resources :events do
-  resources :event_comments, only: [:create, :destroy]
-  resources :event_favorites,  only: [:create, :destroy]
+    resources :event_comments, only: [:create, :destroy]
+  end
+  resources :event_comments, only: [:create, :destroy]do
+    resource :event_favorites,  only: [:create, :destroy]
   end
   resources :mains, only: [:index]
   resources :users, :only => [:index, :show,:edit,:update]

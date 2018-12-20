@@ -1,7 +1,7 @@
 <h1 class="aa">アーティスト一覧</h1>
 	<div class="artist_index_big_box">
-		<div class="artist_index_article" >
-			<% @artists.each do |artist| %>
+		<% @artists.each do |artist| %>
+	    	<div class="artist_index_article" >
 		    	<div class="artist_index_artist_image">
 	 		   		<%= attachment_image_tag artist, :image, :size => '200x200' %>
 				</div>
@@ -9,7 +9,7 @@
    			   		<div class="col-lg-8">
 						<table class="table table-striped">
 							<tr>
-	 	  						<td>名前</td>
+	 	  						<td class="col-xs-1">名前</td>
 	 	  						<td><%=link_to artist.artist_name, artist_path(artist.id) %></td>
 	 	  					</tr>
 	 	  					<tr>
@@ -19,9 +19,8 @@
 	    				</table>
 	    			</div>
 				</div>
-			<% end %>
-		</div>
+			</div>
+		<% end %>
 	</div>
 
-
-
+<%= paginate @artists, class: "paginate" %>
