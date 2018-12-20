@@ -1,0 +1,37 @@
+ja:
+  activerecord:
+    models:
+      event: イベント
+    attributes:
+      event:
+        event_name: イベント名
+        place: 開催場所
+        introduction: イベント内容
+        performer: 出演者
+
+ja:
+  activerecord:
+    models:
+      artist: アーティスト
+    attributes:
+      artist:
+        artist_name: アーティスト名
+        introduction: 詳細
+
+ja:
+  activerecord:
+    models:
+      event_comment: コメント
+    attributes:
+      event_comment:
+        comment: コメント
+        star: 点数
+
+ja:
+  activerecord:
+    models:
+      artist_comment: コメント
+    attributes:
+      artist_comment:
+        content: コメント
+        star: 点数

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  
   resources :artists do
     resources :artist_comments,  only: [:create, :destroy]
+  end
+    resources :artist_comments,  only: [:create, :destroy]do
     resources :artist_favorites,  only: [:create, :destroy]
   end
   resources :events do

@@ -1,6 +1,7 @@
 <% @artist_comment.errors.full_messages.each do |message| %>
   <%= message %>
 <% end %>
+
 <div class="artist_show_big_box">
 	<div class="artist_show_artist_image">
 	    <%= attachment_image_tag @artist, :image, :size => '300x300' %>

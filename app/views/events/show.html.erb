@@ -1,3 +1,7 @@
+<% @event_comment.errors.full_messages.each do |message| %>
+  <%= message %>
+<% end %>
+
 <div class="event_show_big_box">
 	<div class="event_show_event_image">
     	<%= attachment_image_tag @event, :image, :size => '300x300' %>

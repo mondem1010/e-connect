@@ -11,6 +11,7 @@ class ArtistFavoritesController < ApplicationController
             artist_favorite.destroy
             @artist_favorites = ArtistFavorite.where(artist_comment_id: params[:artist_comment_id])
             @artist_comments = ArtistComment.all
-
+            redirect_to artist_path(@artist_comment.artist)
         end
 end
+
