@@ -38,8 +38,9 @@ header {
 
 }
 .header_logo img{
-  width: 267px;
+  width: 260px;
   height: 100px;
+  background-color: white;
 }
 .mains_index_header.clearfix{
   background-color: black;
@@ -58,13 +59,103 @@ header {
 
   body {
     background-image: url("haikei2.jpeg");
-    
 font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
   }
+#slide_menu{
+    position: fixed;
+    top: 0;
+    left: -240px;
+    width: 240px;
+    height: 100%;
+    background: black;
+}
+
+#button{
+  background-color: black;
+  color: white;
+}
 
 footer{
   width: 1440px;
   height: 100px;
   padding-left: 0px;
   background-color: black;
+}
+/* 検索ボックス */
+dl.searchbox{
+  width: 350px;
+  position:relative;
+  background-color:#fff;
+  border:1px solid #aaa;
+  border-radius:6px;
+  top:25px;
+}
+dl.searchbox dt{
+  padding:3px;
+}
+dl.searchbox dt input{
+  width:70%;
+  height:30px;
+  line-height:30px;
+  background:none;
+  border:none;
+}
+dl.searchbox dd{
+  position:absolute;
+  top:1px;
+  right:1px;
+  width:30%;
+}
+.search-btn{
+  display:block;
+  background: gray;
+  width:100%;
+  height:36px;
+  line-height:36px;
+  border:none;
+  border-radius: 0 6px 6px 0;
+  color:#FFF;
+}
+
+.search-btn:hover {
+  background:#228B22;
+}
+.registrations{
+  width: 100%;
+  height: 600px;
+
+  background-image:url("E-Connect.png");
+  background-size: cover;
+}
+.sign-in{
+
+  width: 50%;
+  text-align: center;
+  margin:0 auto;
+  padding-top: 10px;
+  padding-left: 500px;
+}
+h2{
+  color: white;
+}
+label{
+  color: white;
+}
+
+
+.pagination{
+  text-align: right;
+}
+
+#footer {
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    text-align: center;
+
+}
+#foot{
+  padding-top: 40px;
+  color: white;
 }

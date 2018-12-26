@@ -7,7 +7,6 @@ class ArtistsController < ApplicationController
   def index
     @artists = Artist.all.page(params[:page]).per(PER)
   end
-
   def show
     @artist = Artist.find(params[:id])
     @artist_comment = ArtistComment.new
@@ -45,4 +44,7 @@ class ArtistsController < ApplicationController
   def artist_params
         params.require(:artist).permit(:artist_name, :introduction,:image,:url,:page)
   end
+  def search_params
+      params.require(:q).permit(:artist_name_cont)
+    end
 end

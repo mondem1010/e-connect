@@ -19,7 +19,9 @@
             <p><%= f.datetime_select :date %></p>
             <!-- https://qiita.com/Kaisyou/items/c544058dd9c8ae312881 参考URL-->
             <h4>画像</h4>
+            <div class="new_image">
             <%= f.attachment_field :image %>
+            </div>
             <!-- https://qiita.com/ggtmtmgg/items/ba5f275c122c83013ea1参考 -->
             <%= f.submit '投稿' %>
         <% end %>

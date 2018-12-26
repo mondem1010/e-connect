@@ -1,8 +1,8 @@
 class Event < ApplicationRecord
-	validates :event_name, presence: true
-	validates :place, presence: true
-	validates :performer, presence: true
-	validates :introduction, presence: true
+	# validates :event_name, presence: true
+	# validates :place, presence: true
+	# # validates :performer, presence: true
+	# validates :introduction, presence: true
 	attachment :image
 	# mount_uploaders :images, ImageUploader
 	has_many :event_artist

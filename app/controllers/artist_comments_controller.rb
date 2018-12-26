@@ -4,7 +4,7 @@ class ArtistCommentsController < ApplicationController
     @artist_comment = current_user.artist_comments.new(artist_comment_params)
     @artist_comment.artist_id = artist.id
     if @artist_comment.save
-      avg_star = Artist.find(comment.artist_id)
+      avg_star = Artist.find(@artist_comment.artist_id)
       average = artist.artist_comments.average(:star)
       avg_star.update(average_star: average)
       redirect_to artist_path(artist.id)

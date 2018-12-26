@@ -4,7 +4,7 @@
 
 <div class="artist_show_big_box">
 	<div class="artist_show_artist_image">
-	    <%= attachment_image_tag @artist, :image, :size => '300x300' %>
+	    <%= attachment_image_tag @artist, :image, :size => '300x300' ,fallback: 'noimage.png'%>
 	</div>
 		<div class="container">
    			<div class="artist_show_row">
@@ -31,13 +31,14 @@
 			</div>
 		</div>
 		<div class="artist_show_comment_count">
- 			<%= @artist.artist_comments.count %>件のコメント</h2>
+ 			<%= @artist.artist_comments.count %>件のコメント
+ 			平均評価<%= @artist.average_star %>点
 		</div>
 		<div class="artist_show_comment">
    			<% @artist.artist_comments.each do |artist_comment| %>
     			<table class="table table-striped">
 					<tr>
-						<td class="col-xs-1"><%= attachment_image_tag artist_comment.user, :image, :size => '50x50' %><td>
+						<td class="col-xs-1"><%= attachment_image_tag artist_comment.user, :image, :size => '50x50', fallback:"no_image.png"%><td>
 						<td class="col-xs-1"><%= link_to artist_comment.user.name,user_path(artist_comment.user.id) %><td>
    						<td class="col-xs-6"><%= artist_comment.content %><td>
    						<td class="col-xs-1"><%= artist_comment.star %>点<td>

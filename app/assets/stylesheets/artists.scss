@@ -12,14 +12,21 @@
 
 .artist_new{
   width: 60%;
-  border-style: solid;
   margin:0 auto;
   text-align: center;
   padding-bottom: 10px;
 }
 
+.new_image{
+  width: 600px;
+  margin-left: 300px;
+  text-align: center;
+}
+
 /*アーティスト一覧*/
-.aa{text-align: center;}
+.aa{text-align: center;
+    font-family: arial,sans-serif;
+}
 
 .artist_index_big_box{
   width: 80%;

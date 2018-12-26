@@ -10,5 +10,8 @@ class User < ApplicationRecord
          has_many :artist_comments,dependent: :destroy
          has_many :messages, dependent: :destroy
     		 has_many :entries, dependent: :destroy
+         has_one  :room
          attachment :image
+
+
 end

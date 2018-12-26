@@ -1,7 +1,7 @@
 <div class="user_edit_bigbox">
 	<%= form_for(@user) do |f| %>
 		<div class="user_edit_image">
-			<%= f.attachment_field :image %>
+			<%= f.attachment_field :image ,fallback: 'no_image.png' %>
 		</div>
 		<div class="user_edit_profile">
 			 <div class="row">
@@ -18,8 +18,8 @@
 						</tr>
 						<tr>
 							<td>性別</td>
-							<td><label><%= f.radio_button :gender, "男" %> 男 </label>
-						<label><%= f.radio_button :gender, "女" %> 女</label></td>
+				              <td>男性<%= f.radio_button :gender, "男" %></td>
+             				  <td>女性<%= f.radio_button :gender, "女" %></td>
 						</tr>
 						<tr>
 							<td>生年月日</td>
