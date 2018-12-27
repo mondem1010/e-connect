@@ -4,7 +4,7 @@
 
 <div class="event_show_big_box">
 	<div class="event_show_event_image">
-    	<%= attachment_image_tag @event, :image, :size => '300x300' ,fallback: 'noimage.png'%>
+    	<%= attachment_image_tag @event, :image, :size => '300x300' ,fallback: '/images/noimage.png'%>
 	</div>
 		<div class="container">
    		   <div class="event_show_row">
@@ -45,7 +45,7 @@
 				<table class="table table-striped">
 					<% @event.event_comments.each do |event_comment| %>
 						<tr>
-							<td class="col-xs-1"><%= attachment_image_tag event_comment.user, :image, :size => '50x50', fallback:"no_image.png" %><td>
+							<td class="col-xs-1"><%= attachment_image_tag event_comment.user, :image, :size => '50x50', fallback:"/images/no_image.png" %><td>
 							<td class="col-xs-1"><%= link_to event_comment.user.name,user_path(event_comment.user.id) %><td>
 	   						<td class="col-xs-6"><%= event_comment.comment %><td>
 	   						<td class="col-xs-1"><%= event_comment.star %>点<td>

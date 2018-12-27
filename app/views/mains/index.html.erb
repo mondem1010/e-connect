@@ -14,7 +14,7 @@
 	<div class="main_event_big_recent">
 		<% @events.each do |event| %>
 			<div class="main_index_recent">
-				<div><%= attachment_image_tag event, :image, :size => "200x200" ,fallback: 'noimage.png'%></div>
+				<div><%= attachment_image_tag event, :image, :size => "200x200" ,fallback: '/images/noimage.png'%></div>
 				<div class="event_name"><%=link_to event.event_name, event_path(event.id) %></div>
 			</div>
 		<% end %>
@@ -29,7 +29,7 @@
 <div class="main_event_big_recent_artist">
 	<% @artists.each do |artist| %>
 		<div class="main_index_recent_artist">
-			<div><%= attachment_image_tag artist, :image, :size => "200x200",fallback: 'no_image.png' %></div>
+			<div><%= attachment_image_tag artist, :image, :size => "200x200",fallback: '/images/no_image.png' %></div>
 			<div class="artist_name"><%=link_to artist.artist_name, artist_path(artist.id) %></div>
 		</div>
 		<% end %>
@@ -40,7 +40,7 @@
 	<div class="main_event_big_recent">
 		<% @eventss.each do |event| %>
 			<div class="main_index_recent">
-				<div><%= attachment_image_tag event, :image, :size => "200x200",fallback: 'noimage.png' %></div>
+				<div><%= attachment_image_tag event, :image, :size => "200x200",fallback: '/images/noimage.png' %></div>
 				<div class="event_name"><%=link_to event.event_name, event_path(event.id) %></div>
 				<div class="event_avg"><%= event.avg_star %>/100点</div>
 			</div>
@@ -53,7 +53,7 @@
 	<div class="main_event_big_recent_artist">
 		<% @artistss.each do |artist| %>
 			<div class="main_index_recent_artist">
-				<div><%= attachment_image_tag artist, :image, :size => "200x200",fallback: 'no_image.png' %></div>
+				<div><%= attachment_image_tag artist, :image, :size => "200x200",fallback: '/images/no_image.png' %></div>
 				<div class="artist_name"><%=link_to artist.artist_name, artist_path(artist.id) %></div>
 				<div class="event_avg"><%= artist.average_star %>/100点</div>
 			</div>

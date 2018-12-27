@@ -4,7 +4,7 @@
 
 <div class="artist_show_big_box">
 	<div class="artist_show_artist_image">
-	    <%= attachment_image_tag @artist, :image, :size => '300x300' ,fallback: 'noimage.png'%>
+	    <%= attachment_image_tag @artist, :image, :size => '300x300' ,fallback: '/images/noimage.png'%>
 	</div>
 		<div class="container">
    			<div class="artist_show_row">
@@ -38,7 +38,7 @@
    			<% @artist.artist_comments.each do |artist_comment| %>
     			<table class="table table-striped">
 					<tr>
-						<td class="col-xs-1"><%= attachment_image_tag artist_comment.user, :image, :size => '50x50', fallback:"no_image.png"%><td>
+						<td class="col-xs-1"><%= attachment_image_tag artist_comment.user, :image, :size => '50x50', fallback:"/images/no_image.png"%><td>
 						<td class="col-xs-1"><%= link_to artist_comment.user.name,user_path(artist_comment.user.id) %><td>
    						<td class="col-xs-6"><%= artist_comment.content %><td>
    						<td class="col-xs-1"><%= artist_comment.star %>点<td>

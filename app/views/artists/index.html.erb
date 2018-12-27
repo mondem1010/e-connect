@@ -5,7 +5,7 @@
 		<% @search_artists.each do |artist| %>
 	    	<div class="artist_index_article" >
 		    	<div class="artist_index_artist_image">
-	 		   		<%= attachment_image_tag artist, :image, :size => '200x200' ,fallback: 'noimage.png'%>
+	 		   		<%= attachment_image_tag artist, :image, :size => '200x200' ,fallback: '/images/noimage.png'%>
 				</div>
 			   	<div class="row">
    			   		<div class="col-lg-8">

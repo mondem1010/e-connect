@@ -1,7 +1,7 @@
 
 	<div class="user_show_bigbox">
 		<div class="user_show_image">
-			<%= attachment_image_tag @user, :image,:size => '200x200' ,format: 'jpeg',fallback:"no_image.png" %>
+			<%= attachment_image_tag @user, :image,:size => '200x200' ,format: 'jpeg',fallback:"/images/no_image.png" %>
 		</div>
 		<div class="user_show_profile">
 			<table class="table table-striped">

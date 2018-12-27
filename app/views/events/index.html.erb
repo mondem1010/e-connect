@@ -3,7 +3,7 @@
 	 	<% @events.each do |event| %>
 	 		<div class="event_index_article">
 	 			<div class="event_index_event_image">
-	 				<%= attachment_image_tag event, :image, :size => '200x220',fallback: 'noimage.png'%>
+	 				<%= attachment_image_tag event, :image, :size => '200x220',fallback: '/images/noimage.png'%>
 			    </div>
 			    <div class="row">
 	   				<div class="col-lg-8">

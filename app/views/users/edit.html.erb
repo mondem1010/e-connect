@@ -1,7 +1,7 @@
 <div class="user_edit_bigbox">
 	<%= form_for(@user) do |f| %>
 		<div class="user_edit_image">
-			<%= f.attachment_field :image ,fallback: 'no_image.png' %>
+			<%= f.attachment_field :image ,fallback: '/images/no_image.png' %>
 		</div>
 		<div class="user_edit_profile">
 			 <div class="row">
