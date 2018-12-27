@@ -11,18 +11,23 @@
    			   		<div class="col-lg-8">
 						<table class="table table-striped">
 							<tr>
-	 	  						<td class="col-xs-1">名前</td>
+	 	  						<td class="col-xs-2">名前</td>
 	 	  						<td><%=link_to artist.artist_name, artist_path(artist.id) %></td>
 	 	  					</tr>
 	 	  					<tr>
     							<td>詳細</td>
 	    						<td><%= artist.introduction %></td>
 	    					</tr>
+								<td>新着コメント</td>
+									<% artist.artist_comments.order(id: "DESC").limit(1).each do |artist_comment| %>
+								<td id="event_comment"><%= artist_comment.content %></td>
+								<% end %>
 	    				</table>
 	    			</div>
 				</div>
 			</div>
 		<% end %>
 	</div>
-
+<div class="page">
 <%= paginate @artists, class: "paginate" %>
+</div>

@@ -50,8 +50,7 @@
 .event_index_event_introduction{
   width: 600px;
   height: 100px;
-
-float: left;
+  float: left;
 }
 
 .event_index_event_date{
@@ -64,6 +63,14 @@ float: left;
 .table {
 
   
+}
+#event_comment{
+  word-break: break-all;
+}
+
+.page{
+  width: 90%;
+  text-align: right;
 }
 
 /*詳細ーーー*/

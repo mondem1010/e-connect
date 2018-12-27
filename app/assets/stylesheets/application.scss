@@ -21,9 +21,6 @@
   display: block;
   clear: both;
 }
-
-
-
 header {
 	background-color: white;
 	width: 100%;
@@ -31,11 +28,9 @@ header {
   	box-shadow: 0 3px 5px 0 rgba(0,0,0,0.16);
   	display: inline-block;
 }
-
 .header_logo {
   width: 267px;
   height: 100px;
-
 }
 .header_logo img{
   width: 260px;
@@ -45,7 +40,6 @@ header {
 .mains_index_header.clearfix{
   background-color: black;
 }
-
 .mains_index_header_item {
 	width: 150px;
 	height: 100px;
@@ -56,7 +50,6 @@ header {
 	text-align: center;
   background-color: black;
 }
-
   body {
     background-image: url("haikei2.jpeg");
 font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
@@ -69,12 +62,10 @@ font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒ
     height: 100%;
     background: black;
 }
-
 #button{
   background-color: black;
   color: white;
 }
-
 footer{
   width: 1440px;
   height: 100px;

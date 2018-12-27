@@ -14,6 +14,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @event_comment = EventComment.new
+    @Event_comments = EventComment.page(params[:page]).reverse_order
     # @event_favorite = EventFavorite.new
   end
 
