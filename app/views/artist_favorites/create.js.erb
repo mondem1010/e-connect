@@ -1,1 +1,1 @@
-$("#like-buttons-<%= @artist_comment.id %> ").html("<%= j(render partial: 'artists/artist_favorite', locals: { artist_comments: @artist_comments, artist_favorites: @artist_favorites, artist_favorite: @artist_favorite, artist_comment: @artist_comment}) %>")
+$("#like-buttons-<%= @artist_comment.id %> ").html("<%= j(render partial: 'artist_favorite',artist_comments: @artist_comments, artist_favorites: @artist_favorites, artist_favorite: @artist_favorite, artist_comment: @artist_comment) %>")

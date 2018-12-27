@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <% if event_comment.event_favorite_user?(current_user.id) %>
+  <% if event_comment.event_favorite_user?(current_user) %>
     <%= button_to event_comment_event_favorites_path(event_comment.id), method: :delete, remote: true do %>
       <%= image_tag("heart.png",:size =>'10x10') %>
       <span>
@@ -7,9 +7,7 @@
       </span>
   <% end %>
   <% else %>
-    <%= button_to 
-    event_comment_event_favorites_path(
-    event_comment.id),method: :post, remote: true do %>
+    <%= button_to event_comment_event_favorites_path(event_comment.id),method: :post, remote: true do %>
       <%= image_tag("black_heart.png",:size =>'10x10') %><%= event_comment.event_favorites.count %>
     <% end %>
   <% end %>
