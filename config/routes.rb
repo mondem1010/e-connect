@@ -21,6 +21,6 @@ Rails.application.routes.draw do
   resources :check, :only =>[:index]
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
+    root to: 'mains#index'
   end
-  
 end
