@@ -3,10 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.main_index_image{
+.main_image{
 	width: 100%;
 	height: 400px;
 	margin: 0 auto;
+	background-image:url("/images/kari4.jpg");
+	background-size: 100% 400px;
 }
 .main_index_image img{
 	width: 100%;

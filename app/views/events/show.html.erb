@@ -48,6 +48,7 @@
 							<td class="col-xs-1"><%= attachment_image_tag event_comment.user, :image, :size => '50x50', fallback:"/images/no_image.png" %><td>
 							<td class="col-xs-1"><%= link_to event_comment.user.name,user_path(event_comment.user.id) %><td>
 	   						<td class="col-xs-6"><%= event_comment.comment %><td>
+	   						<td class="col-xs-2"><%= event_comment.created_at %><td>
 	   						<td class="col-xs-1"><%= event_comment.star %>点<td>
 	   						<td class="col-xs-1">
 					   		<div id="like-buttons-<%= event_comment.id %>">

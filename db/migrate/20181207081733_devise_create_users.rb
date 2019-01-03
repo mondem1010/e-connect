@@ -2,7 +2,7 @@
 
 class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
-    create_table :users , :options => 'ENGINE=InnoDB ROW_FORMAT=DYNAMIC'do |t|
+    create_table :users do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -39,7 +39,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :gender
       t.string :introduction
       t.string :image_id
-      t.stribg :handle_name
+      t.string :handle_name
       t.string :name
       t.timestamps null: false
     end
