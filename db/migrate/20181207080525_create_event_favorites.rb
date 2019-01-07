@@ -1,6 +1,6 @@
 class CreateEventFavorites < ActiveRecord::Migration[5.2]
   def change
-    create_table :event_favorites, :options => 'ENGINE=InnoDB ROW_FORMAT=DYNAMIC' do |t|
+    create_table :event_favorites do |t|
       t.integer :user_id
       t.integer :event_comment_id
       t.integer :event_favorites_count

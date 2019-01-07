@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  PER = 2
+  PER = 3
   def new
     @event = Event.new
 

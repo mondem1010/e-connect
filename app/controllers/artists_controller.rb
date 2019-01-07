@@ -36,15 +36,14 @@ class ArtistsController < ApplicationController
         artist = Artist.find(params[:id])
         artist.update(artist_params)
         redirect_to artist_path(artist.id)
-
   end
 
 
   private
-  def artist_params
+    def artist_params
         params.require(:artist).permit(:artist_name, :introduction,:image,:url,:page)
-  end
-  def search_params
+    end
+    def search_params
       params.require(:q).permit(:artist_name_cont)
     end
 end

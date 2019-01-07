@@ -41,7 +41,6 @@
               });
           });
           </script>
-          
               <!-- スライドメニュー部分-->
               <nav id="slide_menu">
                   <ol>
@@ -49,8 +48,6 @@
                       <li><%= link_to "新規イベント", new_event_path,:style=>"color: white; text-decoration:none; font-size:14px" %></li>
                       <li><%= link_to "新規アーティスト", new_artist_path,:style=>"color: white; text-decoration:none; font-size:14px" %></li>
                       <li><%= link_to "はじめに", check_index_path,:style=>"color: white; text-decoration:none; font-size:14px" %></li>
-                      
-
                   </ol>
               </nav>
 
@@ -79,5 +76,5 @@
     <body>
       <%= yield %>
     </body>
- <div id="footer"><p id=foot>E-Connect</p></div>
+ <div id="footer"><p id=foot></p></div>
 </html>
